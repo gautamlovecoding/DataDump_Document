@@ -62,10 +62,10 @@ async function connectAndCopyData(config = {}) {
 }
 
 let config = {
-    sourceDatabase: 'mongodb://gautam_kumar:ggJh2pPUlz9U3D@35.154.137.67:20595/perfect_010623?authsource=admin',
-    destinationDatabase: 'mongodb://127.0.0.1:27017/cf_prod_local?directConnection=true',
+    sourceDatabase: 'mongodb://source-server/source-db',
+    destinationDatabase: 'mongodb://target-server/target-db',
     collectionsToCopy: ['fiscalrankings', 'fiscalrankingmappers'],
-    filterCondition : { ulb : {$in: [ObjectId('5eb5845176a3b61f40ba08ac'), ObjectId("5fa2465e072dab780a6f11d4")]}}
+    filterCondition: { ulb: { $in: [] } }
 }
 
 connectAndCopyData(config);
